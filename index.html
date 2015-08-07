@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<title>Animating with Snap.svg</title>
+	
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300,500,700,300italic' rel='stylesheet' type='text/css'>
+	
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.scrollTo-1.4.3.1.min.js"></script>
+	<script src="js/jquery.scrollorama.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.scrolldeck.js"></script>
+</head>
+<body>
+	
+	<div id="header" style="display:none;">
+		<a href="#howtouse" class="nav-button">Why animate?</a>
+		<a href="#examples" class="nav-button">Why Snap?</a>
+		<a href="#credits" class="nav-button">Demo time!</a>
+	</div>
+
+	<div class="slide" id="landing">
+    <div class="inner">
+  		<h1 id="title">SVG Animation<br /><small>with Snap.svg</small></h1>
+      <p style="margin-top:4em">Julia Smith
+        <br />2015 Knight-Mozilla Fellow
+        <br /><a href="//twitter.com/julia67">@julia67</a>
+      </p>
+    </div>
+	</div>
+	
+	<div class="slide" id="why-svg">
+    <div class="inner">
+  		<h1 id="title">Why SVG?</h1>
+      <ul>
+        <li>Resolution independent</li>
+        <li>Lightweight</li>
+        <li>Styleable</li>
+        <li>Interactive</li>
+        <li>Accessible</li>
+      </ul>
+    </div>
+	</div>
+  <div class="slide" id="why-svg-1">  
+    <div class="inner">
+      <h2>Resolution independence</h2>
+      <svg version="1.1" id="example-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="49.248px" height="49.247px" viewBox="0 0 49.248 49.247" enable-background="new 0 0 49.248 49.247" xml:space="preserve">
+      <path fill="#6D6E71" d="M24.624,0C11.024,0,0,11.024,0,24.625c0,13.6,11.024,24.622,24.624,24.622s24.624-11.022,24.624-24.622
+        C49.248,11.024,38.223,0,24.624,0z M38.071,18.491c0.012,0.275,0.019,0.552,0.019,0.83c0,8.486-6.459,18.271-18.271,18.271
+        c-3.626,0-7.002-1.062-9.844-2.885c0.502,0.061,1.013,0.09,1.532,0.09c3.009,0,5.777-1.025,7.976-2.748
+        c-2.81-0.053-5.182-1.908-5.999-4.459c0.392,0.074,0.794,0.112,1.208,0.112c0.586,0,1.153-0.075,1.692-0.225
+        c-2.938-0.588-5.151-3.184-5.151-6.295c0-0.029,0-0.057,0-0.082c0.866,0.48,1.856,0.771,2.909,0.803
+        c-1.723-1.151-2.857-3.116-2.857-5.344c0-1.178,0.317-2.281,0.869-3.229c3.167,3.885,7.899,6.44,13.236,6.709
+        c-0.109-0.472-0.166-0.962-0.166-1.464c0-3.547,2.875-6.422,6.422-6.422c1.847,0,3.515,0.779,4.687,2.027
+        c1.463-0.287,2.837-0.822,4.078-1.557c-0.479,1.498-1.498,2.758-2.823,3.551c1.299-0.154,2.536-0.498,3.688-1.01
+        C40.414,16.454,39.325,17.584,38.071,18.491z"/>
+      </svg>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        var twitterSVG = Snap('#example-1');
+        var twitter = twitterSVG.select('path');
+        twitter.attr({
+          fill: '#00a99d'
+        })
+        twitterSVG.attr({
+          width: 300,
+          height: 300,
+          cx: 75,
+          cy: 75
+        })
+
+        var twitterSVGClone2 = twitterSVG.clone();
+        var twitterClone2 = twitterSVGClone2.select('path');
+        twitterSVGClone2.attr({
+          width: 100,
+          height: 100,
+          cx: 25,
+          cy: 25
+        })
+
+        var twitterSVGClone = twitterSVG.clone();
+        var twitterClone = twitterSVGClone.select('path');
+        twitterSVGClone.attr({
+          width: 200,
+          height: 200,
+          cx: 50,
+          cy: 50
+        })
+
+        
+      });
+      </script>
+    </div>
+  </div>
+
+  <div class="slide" id="why-svg-2">  
+    <div class="inner">
+      <h2>Lightweight</h2>
+      <svg version="1.1" id="example-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="49.248px" height="49.247px" viewBox="0 0 49.248 49.247" enable-background="new 0 0 49.248 49.247" xml:space="preserve">
+      <path fill="#6D6E71" d="M24.624,0C11.024,0,0,11.024,0,24.625c0,13.6,11.024,24.622,24.624,24.622s24.624-11.022,24.624-24.622
+        C49.248,11.024,38.223,0,24.624,0z M38.071,18.491c0.012,0.275,0.019,0.552,0.019,0.83c0,8.486-6.459,18.271-18.271,18.271
+        c-3.626,0-7.002-1.062-9.844-2.885c0.502,0.061,1.013,0.09,1.532,0.09c3.009,0,5.777-1.025,7.976-2.748
+        c-2.81-0.053-5.182-1.908-5.999-4.459c0.392,0.074,0.794,0.112,1.208,0.112c0.586,0,1.153-0.075,1.692-0.225
+        c-2.938-0.588-5.151-3.184-5.151-6.295c0-0.029,0-0.057,0-0.082c0.866,0.48,1.856,0.771,2.909,0.803
+        c-1.723-1.151-2.857-3.116-2.857-5.344c0-1.178,0.317-2.281,0.869-3.229c3.167,3.885,7.899,6.44,13.236,6.709
+        c-0.109-0.472-0.166-0.962-0.166-1.464c0-3.547,2.875-6.422,6.422-6.422c1.847,0,3.515,0.779,4.687,2.027
+        c1.463-0.287,2.837-0.822,4.078-1.557c-0.479,1.498-1.498,2.758-2.823,3.551c1.299-0.154,2.536-0.498,3.688-1.01
+        C40.414,16.454,39.325,17.584,38.071,18.491z"/>
+      </svg> <span style="font-size: 125px;padding-bottom:50px;display: table-cell;vertical-align: middle;float: left;padding-top: 50px;"> = 1KB</span>
+      <style>#example-2{float:left;margin-right:30px;}</style>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        var twitterSVG = Snap('#example-2');
+        var twitter = twitterSVG.select('path');
+        twitter.attr({
+          fill: '#00a99d'
+        })
+        twitterSVG.attr({
+          width: 300,
+          height: 300,
+          cx: 75,
+          cy: 75
+        })
+
+      });
+      </script>
+      <p style="width: 100%; float: right; text-align: center; margin-top: 6rem;">A transparent PNG of the same size would be ~8KB.</p>
+    </div>
+  </div>
+
+
+  <div class="slide" id="why-svg-3">  
+    <div class="inner">
+      <h2>Style</h2>
+      <svg version="1.1" id="example-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="49.248px" height="49.247px" viewBox="0 0 49.248 49.247" enable-background="new 0 0 49.248 49.247" xml:space="preserve">
+      <path fill="#6D6E71" d="M24.624,0C11.024,0,0,11.024,0,24.625c0,13.6,11.024,24.622,24.624,24.622s24.624-11.022,24.624-24.622
+        C49.248,11.024,38.223,0,24.624,0z M38.071,18.491c0.012,0.275,0.019,0.552,0.019,0.83c0,8.486-6.459,18.271-18.271,18.271
+        c-3.626,0-7.002-1.062-9.844-2.885c0.502,0.061,1.013,0.09,1.532,0.09c3.009,0,5.777-1.025,7.976-2.748
+        c-2.81-0.053-5.182-1.908-5.999-4.459c0.392,0.074,0.794,0.112,1.208,0.112c0.586,0,1.153-0.075,1.692-0.225
+        c-2.938-0.588-5.151-3.184-5.151-6.295c0-0.029,0-0.057,0-0.082c0.866,0.48,1.856,0.771,2.909,0.803
+        c-1.723-1.151-2.857-3.116-2.857-5.344c0-1.178,0.317-2.281,0.869-3.229c3.167,3.885,7.899,6.44,13.236,6.709
+        c-0.109-0.472-0.166-0.962-0.166-1.464c0-3.547,2.875-6.422,6.422-6.422c1.847,0,3.515,0.779,4.687,2.027
+        c1.463-0.287,2.837-0.822,4.078-1.557c-0.479,1.498-1.498,2.758-2.823,3.551c1.299-0.154,2.536-0.498,3.688-1.01
+        C40.414,16.454,39.325,17.584,38.071,18.491z"/>
+      </svg>
+      <style>#example-3{width:100%;display:block;margin:0 auto;}</style>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        var twitterSVG = Snap('#example-3');
+        var twitter = twitterSVG.select('path');
+        var gradient = twitterSVG.gradient("l(0, 0, 1, 1)#ccaddb-#00a99d-#addbc1");
+        twitter.attr({
+          fill: gradient
+        })
+        twitterSVG.attr({
+          width: 300,
+          height: 300,
+          cx: 75,
+          cy: 75
+        })
+
+      });
+      </script>
+      <p style="width: 100%; float: right; text-align: center; margin-top: 6rem;">But do try to make it prettier.</p>
+    </div>
+  </div>
+
+
+  <div class="slide" id="why-svg-4">  
+    <div class="inner">
+      <h2>Interaction</h2>
+      <svg version="1.1" id="example-4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="49.248px" height="49.247px" viewBox="0 0 49.248 49.247" enable-background="new 0 0 49.248 49.247" xml:space="preserve">
+      <path fill="#6D6E71" d="M24.624,0C11.024,0,0,11.024,0,24.625c0,13.6,11.024,24.622,24.624,24.622s24.624-11.022,24.624-24.622
+        C49.248,11.024,38.223,0,24.624,0z M38.071,18.491c0.012,0.275,0.019,0.552,0.019,0.83c0,8.486-6.459,18.271-18.271,18.271
+        c-3.626,0-7.002-1.062-9.844-2.885c0.502,0.061,1.013,0.09,1.532,0.09c3.009,0,5.777-1.025,7.976-2.748
+        c-2.81-0.053-5.182-1.908-5.999-4.459c0.392,0.074,0.794,0.112,1.208,0.112c0.586,0,1.153-0.075,1.692-0.225
+        c-2.938-0.588-5.151-3.184-5.151-6.295c0-0.029,0-0.057,0-0.082c0.866,0.48,1.856,0.771,2.909,0.803
+        c-1.723-1.151-2.857-3.116-2.857-5.344c0-1.178,0.317-2.281,0.869-3.229c3.167,3.885,7.899,6.44,13.236,6.709
+        c-0.109-0.472-0.166-0.962-0.166-1.464c0-3.547,2.875-6.422,6.422-6.422c1.847,0,3.515,0.779,4.687,2.027
+        c1.463-0.287,2.837-0.822,4.078-1.557c-0.479,1.498-1.498,2.758-2.823,3.551c1.299-0.154,2.536-0.498,3.688-1.01
+        C40.414,16.454,39.325,17.584,38.071,18.491z"/>
+      </svg>
+      <style>#example-4{width:100%;display:block;margin:0 auto;}</style>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        var twitterSVG = Snap('#example-4');
+        var twitter = twitterSVG.select('path');
+        var gradient = twitterSVG.gradient("l(0, 0, 1, 1)#ccaddb-#00a99d-#addbc1");
+        twitter.attr({
+          fill: gradient
+        })
+        twitterSVG.attr({
+          width: 300,
+          height: 300,
+          cx: 75,
+          cy: 75
+        })
+        twitter.hover(function(){
+          animIn();
+        }, function(){
+          animOut();
+        })
+        function animIn () {
+          //gradient.attr({ x1: 0, y1: 0, x2: 1, y2: 1 });
+          //gradient.animate({ x1: 0, y1: 100, x2: 0, y2: 100 }, 2000, mina.linear);
+          twitter.animate({
+            transform: 'r360, 24.75, 24.75'
+          },750, mina.easeInOut)
+        };
+
+        function animOut () {
+          //gradient.attr({ x1: 0, y1: 0, x2: 1, y2: 1 });
+          twitter.animate({
+            transform: 'r0, 24.75, 24.75'
+          },750, mina.easeInOut)
+        };
+
+      });
+      </script>
+      <p style="width: 100%; float: right; text-align: center; margin-top: 6rem;">Don't do this either.</p>
+    </div>
+  </div>
+
+
+  <div class="slide" id="why-svg-5">  
+    <div class="inner">
+      <h2>Accessibility</h2>
+      <p><blockquote><pre>&lt;svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="49.248px" height="49.247px" viewBox="0 0 49.248 49.247" enable-background="new 0 0 49.248 49.247" xml:space="preserve">
+   &lt;title>Twitter icon&lt;/title>
+&lt;path fill="#6D6E71" d="M24.624,0C11.024,0,0,11.024,0,24.625c0,13.6,11.024,24.622,24.624,24.622s24.624-11.022,24.624-24.622
+  C49.248,11.024,38.223,0,24.624,0z M38.071,18.491c0.012,0.275,0.019,0.552,0.019,0.83c0,8.486-6.459,18.271-18.271,18.271
+  c-3.626,0-7.002-1.062-9.844-2.885c0.502,0.061,1.013,0.09,1.532,0.09c3.009,0,5.777-1.025,7.976-2.748
+  c-2.81-0.053-5.182-1.908-5.999-4.459c0.392,0.074,0.794,0.112,1.208,0.112c0.586,0,1.153-0.075,1.692-0.225
+  c-2.938-0.588-5.151-3.184-5.151-6.295c0-0.029,0-0.057,0-0.082c0.866,0.48,1.856,0.771,2.909,0.803
+  c-1.723-1.151-2.857-3.116-2.857-5.344c0-1.178,0.317-2.281,0.869-3.229c3.167,3.885,7.899,6.44,13.236,6.709
+  c-0.109-0.472-0.166-0.962-0.166-1.464c0-3.547,2.875-6.422,6.422-6.422c1.847,0,3.515,0.779,4.687,2.027
+  c1.463-0.287,2.837-0.822,4.078-1.557c-0.479,1.498-1.498,2.758-2.823,3.551c1.299-0.154,2.536-0.498,3.688-1.01
+  C40.414,16.454,39.325,17.584,38.071,18.491z"/>
+&lt;/svg></pre></blockquote></p>
+    </div>
+  </div>
+
+  <div class="slide" id="why-animate">
+    <div class="inner">
+      <h1 id="title">Why animate?</h1>
+      <ul>
+        <li>Create fluid transitions</li>
+        <li>Provide visual feedback</li>
+        <li>Guide the user</li>
+        <li>Create an emotional response</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide" id="why-animate-1">
+    <div class="inner">
+      <h1 id="title">It's about time.</h1>
+      <p class="play"><span>play</span></p>
+      <div class="block" style="width:33%">
+        <svg id="no-transition-1"></svg>
+        <p>no transition</p>
+      </div>
+      <div class="block" style="width:33%">
+        <svg id="linear-transition-1"></svg>
+        <p>linear transition</p>
+      </div>
+      <div class="block" style="width:33%">
+        <svg id="bounce-transition-1"></svg>
+        <p>bounce transition</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#why-animate-1 .play").click(function(){
+          $("#why-animate-1 svg").empty();
+          startAnimation();
+        })
+
+        function startAnimation(){
+          var none = Snap('#no-transition-1');
+          var linear = Snap('#linear-transition-1');
+          var bounce = Snap('#bounce-transition-1');
+
+          var circle1 = none.circle(50,50,25);
+          circle1.attr({
+            fill: '#00a99d'
+          });
+          circle1.animate({
+            //cx: 300 
+          }, 1000, mina.linear, function(){
+            circle1.attr({
+              cx:250
+            });
+          });
+
+          var circle2 = linear.circle(50,50,25);
+          circle2.attr({
+            fill: '#00a99d'
+          });
+          circle2.animate({
+            cx: 250 
+          }, 1000, mina.linear);
+
+          var circle3 = bounce.circle(50,50,25);
+          circle3.attr({
+            fill: '#00a99d'
+          });
+          circle3.animate({
+            cx: 250 
+          }, 1000, mina.bounce);
+        }
+
+
+      });
+    </script>
+  </div>
+
+
+  <div class="slide" id="why-animate-2">
+    <div class="inner">
+      <h1 id="title">Another!</h1>
+      <div class="block" style="width:50%">
+        <p class="play" id="play1"><span>play 1</span></p>
+        <svg id="no-transition-2"></svg>
+        <p>no transition</p>
+      </div>
+      <div class="block" style="width:50%">
+        <p class="play" id="play2"><span>play 2</span></p>
+        <svg id="linear-transition-2"></svg>
+        <p>linear transition</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#why-animate-2 #play1").click(function(){
+          $("#why-animate-2 #no-transition-2").empty();
+          startAnimation1();
+        })
+        $("#why-animate-2 #play2").click(function(){
+          $("#why-animate-2 #linear-transition-2").empty();
+          startAnimation2();
+        })
+
+        function startAnimation1(){
+          var none = Snap('#no-transition-2');
+
+          var rect1 = none.rect(0, 0, 300, 100);
+          rect1.attr({
+            fill: 'blue'
+          });
+          rect1.animate({
+            //cx: 300 
+          }, 1000, mina.linear, function(){
+            rect1.attr({
+              height:2,
+              fill: 'pink'
+            });
+          });
+        }
+
+        function startAnimation2(){
+          var linear = Snap('#linear-transition-2');
+
+          var rect2 = linear.rect(0, 0, 300, 100);
+          rect2.attr({
+            fill: 'blue'
+          });
+          rect2.animate({
+            height:2,
+            fill: 'pink'
+          }, 1000, mina.linear);
+        }
+
+
+      });
+    </script>
+  </div>
+
+
+
+	<div class="slide">
+		<p class="animate-build" data-build="1">Create section navigation by linking to slide id&rsquo;s <small>(optional)</small></p>
+		<p class="animate-build" data-build="2">After linking all the required scripts (jQuery, Scrollorama, scrollTo, easing &amp; scrolldeck), create the slide deck on document ready event.</p>
+		<p class="animate-build" data-build="3"><blockquote><pre>
+$(document).ready(function() {
+  var deck = new $.scrolldeck();
+});</pre></blockquote></p>
+	</div>
+
+	<div class="slide">
+		<p>You can configure the settings as follows<br /><small>(example has the default config values assigned)</small></p>
+		<p><blockquote><pre>
+$(document).ready(function() {
+  var deck = new $.scrolldeck({
+    buttons: '.nav-button',
+    slides: '.slide',
+    duration: 600,
+    easing: 'easeInOutExpo',
+	offset: 0
+  });
+});</pre></blockquote></p>
+		<p><small class="pro-tip">Pro-Tip: To hide the scrollbar, set <code>html{overflow:hidden;}</code> in your css</small>
+		</p>
+	</div>
+	
+	<div class="slide" id="animations">
+		<p>Add animations to slides by adding the <code>"animate-in"</code> <br />
+		or <code>"animate-build"</code> classes to elements in your slides.</p>
+		<p><blockquote><pre>
+&lt;div class="slide"&gt;
+    &lt;p class="animate-in" data-animation="fly-in-left"&gt;This paragraph will fly in from the left.&lt;/p&gt;
+    &lt;p class="animate-in" data-animation="fly-in-right"&gt;This paragraph will fly in from the right.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="slide"&gt;
+    &lt;p&gt;This slide will get be &rsquo;pinned&lsquo; to the top of the screen until all the slide animation builds are complete.&lt;/p&gt;
+    &lt;p class="animate-build" data-build="1"&gt;This paragraph will fade in (the default animation)&lt;/p&gt;
+    &lt;p class="animate-build" data-animation="space-in" data-build="2"&gt;This paragraph will fade in while its letter spacing contracts to normal.&lt;/p&gt;
+&lt;/div&gt;
+</pre></blockquote></p>
+		<p><small>Available animations are <code>"fly-in-left"</code>, <code>"fly-in-right"</code>, <br /><code>"space-in"</code> and the default which is <code>"fade-in"</code></small></p>
+	</div>
+	
+	<div class="slide" id="examples">
+		<div class="container">
+			<h1>Examples</h1>
+			<p><a href="http://johnpolacek.github.com/scrolldeck.js/decks/responsive/">Slide Animations Example</a><br /><small>(What The Heck Is Responsive Web Design)</small></p>
+			<p><a href="http://johnpolacek.github.com/scrolldeck.js/decks/infographics">Image Slides Example</a><br /><small>(Infographics Are Cool)</small></p>
+			<p><a href="http://johnpolacek.github.com/scrolldeck.js/decks/parallax">jQuery Parallax Plugin Example</a></p>
+		</div>
+	</div>
+	
+	<div class="slide" id="credits">
+		<h1>Credits</h1>
+		<p>scrolldeck.js &amp; <a href="http://johnpolacek.github.com/scrollorama">Scrollorama</a> by <a href="http://twitter.com/johnpolacek">John Polacek</a></p>
+		<p><a href="http://demos.flesler.com/jquery/scrollTo/">jQuery ScrollTo</a> by <a href="https://twitter.com/#!/flesler">Ariel Flesler</a></p>
+		<br />
+		<p><small>Inspired by other cool slide deck js libraries:<br />
+			<a href="http://dressrush.com/blog/post/12506021124/dressrush-online-pitch-deck">Pitch Deck</a>,
+			<a href="http://imakewebthings.github.com/deck.js/">deck.js</a> and
+			<a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>
+		</small></p>
+	</div>
+	
+	
+  
+  <script src="viz/scripts/snap.svg-min.js"></script>
+	<script>
+	  $(document).ready(function() {
+		  	$('.slide').css('min-height',$(window).height());
+
+			var deck = new $.scrolldeck({
+				buttons: '.nav-button',
+				easing: 'easeInOutExpo'
+			});
+			
+			// add other animations using the scrolldeck.controller (see Scrollorama plugin)
+			console.log(deck.controller);
+			deck.controller.animate('#instructions',{ duration: 100, property:'opacity', end: 0 });
+		  
+	  });
+	</script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-2821890-9']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+</body></html>
